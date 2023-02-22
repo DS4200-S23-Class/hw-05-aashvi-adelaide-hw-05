@@ -3,12 +3,68 @@
 
 <head>
     <meta charset=utf-8/>
+    <link rel="stylesheet" href="hw5.css">
+    <title> hw-05 </title>
+    <script src='js/d3.v6.1.1/d3.min.js'></script>
 </head>
 
 
 <body>
+<h1 class = "centered"> hw-05: Interactive Graph with D3 </h1>
+<div class = "container"> 
+	<div class = "left_column">
+		<div id="scatter"></div>
+		<div id = "bar"> </div>
+	 </div>
+
+	<div class = "right_column">
+
+                <div id="xselect">
+                    <h4>x-coordinate</h4>
+                    <select id="xcoord">
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                        <option value = "6">6</option>
+                        <option value = "7">7</option>
+                        <option value = "8">8</option>
+                        <option value = "9">9</option>
+                    </select>
+                </div>
+
+                <div id="yselect">
+                    <h4>y-coordinate</h4>
+                    <select id="ycoord">
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                        <option value = "6">6</option>
+                        <option value = "7">7</option>
+                        <option value = "8">8</option>
+                        <option value = "9">9</option>
+                    </select>
+                </div>
+    
+    <div>
+	<button type = "button" id = "point-button"> Add Points to Graph ! </button>
+    </div>
+
+    <p id = "selected_points"></p>
 
 
+	
+
+
+
+</div>
+</div>
+
+
+<script src='hw5.js'></script>
 </body>
 
 </html>
