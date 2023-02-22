@@ -1,9 +1,14 @@
 body {
-	font-family: Arial;
+	font-family: Helvetica;
 }
 
 .centered {
     text-align: center;
+}
+
+
+.container{
+	display:flex;
 }
 
 .left_column {
@@ -16,4 +21,13 @@ body {
   width: 40%;
   float: right;
   min-height: 400px;
+  height: 100vh;
 }
+
+
+#Acknowledgements {
+ padding-top: 5%;
+ clear: both;
+ text-align: left;
+}
+ 

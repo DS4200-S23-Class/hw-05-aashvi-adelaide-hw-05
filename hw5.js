@@ -98,7 +98,7 @@ const FRAME1 = d3.select("#scatter")
 
 
 	 // if clicked-> remove border 
-	 if (d3.select(this).style("stroke") == "blue") {
+	 if (d3.select(this).style("stroke") == "powderblue") {
 	 	d3.select(this).style("stroke", "none");
 
 	 	pt_id = points.indexOf(point);
@@ -106,7 +106,8 @@ const FRAME1 = d3.select("#scatter")
 	 }
 	  // if clicked -> add border
 	 else {
-	 	d3.select(this).style("stroke", "blue")
+	 	d3.select(this).style("stroke", "powderblue")
+	 	d3.select(this).style("stroke-width", "4px")
 
 	 	points.push(point);
 
