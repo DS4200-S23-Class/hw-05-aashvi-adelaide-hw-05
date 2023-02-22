@@ -18,35 +18,35 @@ const FRAME1 = d3.select("#scatter")
  function plot_scatter() {
 
   d3.csv("data/scatter-data.csv").then((data) => {
-  const MAX_X3 = d3.max(data, (d) => { return parseInt(d.x)});
-  const X_SCALE3 = d3.scaleLinear() 
-                      .domain([0, MAX_X3])  
+  const MAX_X1 = d3.max(data, (d) => { return parseInt(d.x)});
+  const X_SCALE1 = d3.scaleLinear() 
+                      .domain([0, MAX_X1])  
                       .range([0, VIS_WIDTH]); 
 
-  const MAX_Y3 = d3.max(data, (d) => {return parseInt(d.y)});
-  const Y_SCALE3 = d3.scaleLinear() 
-                      .domain([0, MAX_Y3])  
+  const MAX_Y1 = d3.max(data, (d) => {return parseInt(d.y)});
+  const Y_SCALE1 = d3.scaleLinear() 
+                      .domain([0, MAX_Y1])  
                       .range([VIS_HEIGHT, 0]); 
 
   FRAME1.selectAll("points")  
-        .data(data) // passed from .then  
+        .data(data)
         .enter()       
         .append("circle")  
-          .attr("cx", (d) => { return (X_SCALE3(d.x) + MARGINS.left); }) 
-          .attr("cy", (d) => { return (Y_SCALE3(d.y) + MARGINS.top) }) 
+          .attr("cx", (d) => { return (X_SCALE1(d.x) + MARGINS.left); }) 
+          .attr("cy", (d) => { return (Y_SCALE1(d.y) + MARGINS.top) }) 
           .attr("r", 10)
           .attr("class", "point");
 
 
    FRAME1.append("g")
             .attr("transform", "translate(" + MARGINS.left + "," + (VIS_HEIGHT + MARGINS.top) + ")")
-            .call(d3.axisBottom(X_SCALE3).ticks(10))
+            .call(d3.axisBottom(X_SCALE1).ticks(10))
             .attr("font-size", "20px");
 
-    // make y axis
+    
     FRAME1.append("g")
             .attr("transform", "translate(" + MARGINS.left + "," + MARGINS.top + ")")
-            .call(d3.axisLeft(Y_SCALE3).ticks(9))
+            .call(d3.axisLeft(Y_SCALE1).ticks(9))
             .attr("font-size", "20px");
 
  
@@ -71,7 +71,7 @@ const FRAME1 = d3.select("#scatter")
 	  		.attr("class", "point")
 
 	   FRAME1.selectAll(".point")
-          .on("mouseover", handleMouseover) //add event listeners
+          .on("mouseover", handleMouseover) 
           .on("mouseleave", handleMouseleave)
           .on("click", handleClick);
 
@@ -118,7 +118,7 @@ const FRAME1 = d3.select("#scatter")
 	}
 
 	FRAME1.selectAll(".point")
-          .on("mouseover", handleMouseover) //add event listeners
+          .on("mouseover", handleMouseover) 
           .on("mouseleave", handleMouseleave)
           .on("click", handleClick);
  
@@ -130,11 +130,7 @@ const FRAME1 = d3.select("#scatter")
 
 
 
-
-
-
-
-
+// BAR GARPH
 
 const FRAME2 = d3.select('#bar')
 				 .append("svg")
